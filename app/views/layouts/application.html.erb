@@ -9,9 +9,14 @@
 
 <body>
 
-  <%= image_tag "logo.png", :alt => "Mixalope", :size => "176x61" %>
+  <div id="header">
+    <%= image_tag "logo.png", :alt => "Mixalope", :size => "176x61" %>
+  </div>
 
-  <%= yield %>
+  <div id="body">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>
