@@ -4,9 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
   <title>Mixalope</title>
+  <%= stylesheet_link_tag :all, :cache => true %>
 </head>
 
 <body>
+
+  <%= image_tag "logo.png", :alt => "Mixalope", :size => "176x61" %>
 
   <%= yield %>
 
