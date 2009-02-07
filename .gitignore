@@ -1,0 +1,6 @@
+.DS_Store
+log/*.log
+tmp/**/*
+doc/
+config/database.yml
+config/initializers/session_store.rb
