@@ -11,6 +11,7 @@ Rails::Initializer.run do |config|
   config.gem "mysql",       :version => "2.7"
   config.gem "rspec-rails", :version => "1.1.12", :lib => false
   config.gem "capistrano",  :version => "2.5.4",  :lib => false
+  config.gem "rack",        :version => "0.9.1",  :lib => false
 
   config.frameworks -= [ :active_resource, :action_mailer ]
 
