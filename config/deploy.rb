@@ -19,7 +19,7 @@ after "deploy:update_code", "deploy:symlink_config_files"
 
 namespace :deploy do
   desc "Link in the production database.yml and session_store.rb"
-  task :symlink_config_files do
+  task :symlink_config_files, :roles => :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/initializers/session_store.rb #{release_path}/config/initializers/session_store.rb"
   end
