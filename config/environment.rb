@@ -13,7 +13,7 @@ Rails::Initializer.run do |config|
   config.gem "capistrano",  :version => "2.5.4",  :lib => false
   config.gem "rack",        :version => "0.9.1",  :lib => false
 
-  config.frameworks -= [ :active_resource, :action_mailer ]
+  config.frameworks -= [ :active_resource ]
 
   config.time_zone = 'UTC'
 end
