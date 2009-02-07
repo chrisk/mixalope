@@ -1,0 +1,19 @@
+<% form_for @sample, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :sound, "MP3 file" %>
+    <%= f.file_field :sound %>
+    <br />
+    <small>Must be 44.1kHz, less than 1 MB</small>
+  </p>
+
+  <p>
+    <%= f.submit "Save" %>
+  </p>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Samples</h1>
+<p><%= link_to "Upload", new_sample_path %></p>
+
+<ul class="graphic">
+<% @samples.each do |sample| %>
+  <li>
+    <%= link_to sample.name, sample.sound.url %>
+    <%= link_to "edit", edit_sample_path(sample) %>
+    <%= link_to "remove", sample_path(sample), :method => :delete %>
+  </li>
+<% end %>
+</ul>
+
+

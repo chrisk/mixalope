@@ -9,6 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20090207141236) do
+
+  create_table "samples", :force => true do |t|
+    t.string   "name"
+    t.string   "sound_file_name"
+    t.string   "sound_content_type"
+    t.integer  "sound_file_size"
+    t.datetime "sound_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
