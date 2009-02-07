@@ -9,7 +9,17 @@ body {
 div#header {}
 
 div#body {
-  font-size: 2em;
-  margin: 1em 1.2em;
 
+  margin: 2em 2.4em;
+}
+
+h1 {
+  font-size: 2em;
+}
+p {
+  font-size: 1.4em;
+}
+
+a {
+  color: #ff9;
 }

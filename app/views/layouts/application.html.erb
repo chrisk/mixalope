@@ -5,6 +5,14 @@
 <head>
   <title>Mixalope</title>
   <%= stylesheet_link_tag :all, :cache => true %>
+  <%= javascript_include_tag "soundmanager2" %>
+  <%= javascript_include_tag "inlineplayer" %>
+  <script type="text/javascript">
+    soundManager.url = '/swfs/';
+    soundManager.debugMode = true;
+    soundManager.waitForWindowLoad = true;
+    soundManager.consoleOnly = true;
+  </script>
 </head>
 
 <body>
