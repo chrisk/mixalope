@@ -3,6 +3,8 @@ set :repository,  "git://github.com/chrisk/mixalope.git"
 set :deploy_to, "/home/#{application}/www/"
 
 set :scm, :git
+set :branch, "master"
+set :deploy_via, :remote_cache
 default_run_options[:pty] = true
 ssh_options[:port] = 24832
 
