@@ -1,18 +1,21 @@
 set :application, "mixalope"
+set :domain,      "mixalope.com"
 set :repository,  "git://github.com/chrisk/mixalope.git"
-set :deploy_to, "/home/#{application}/www/"
+set :deploy_to,   "/home/#{application}/www/"
 
-set :scm, :git
-set :branch, "master"
+set :scm,        :git
+set :branch,     "master"
 set :deploy_via, :remote_cache
+
 default_run_options[:pty] = true
 ssh_options[:port] = 24832
 
-set :user, 'mixalope'
+set :user, application
 
-role :app, "mixalope.com"
-role :web, "mixalope.com"
-role :db,  "mixalope.com", :primary => true
+role :app, domain
+role :web, domain
+role :db,  domain, :primary => true
+
 
 after "deploy:update_code", "deploy:symlink_config_files"
 
