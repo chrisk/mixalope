@@ -25,6 +25,7 @@ namespace :deploy do
   task :symlink_config_files, :roles => :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/initializers/session_store.rb #{release_path}/config/initializers/session_store.rb"
+    run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
   end
 
   desc "Restart application"

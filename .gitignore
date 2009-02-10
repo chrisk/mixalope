@@ -5,3 +5,4 @@ doc/
 config/database.yml
 config/initializers/session_store.rb
 public/system/**/*
+public/uploads
