@@ -80,10 +80,10 @@ describe SamplesController do
         assigns(:sample).should equal(mock_sample)
       end
 
-      it "should redirect to the created sample" do
+      it "should redirect to the samples page" do
         Sample.stub!(:new).and_return(mock_sample(:save => true))
         post :create, :sample => {}
-        response.should redirect_to(sample_url(mock_sample))
+        response.should redirect_to(samples_url)
       end
       
     end

@@ -45,7 +45,7 @@ class SamplesController < ApplicationController
     respond_to do |format|
       if @sample.save
         flash[:notice] = 'Sample was successfully created.'
-        format.html { redirect_to(@sample) }
+        format.html { redirect_to samples_url }
         format.xml  { render :xml => @sample, :status => :created, :location => @sample }
       else
         format.html { render :action => "new" }
