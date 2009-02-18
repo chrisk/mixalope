@@ -1,0 +1,57 @@
+table {
+  border-collapse: collapse;
+}
+table tbody td {
+  width: 30px;
+  height: 51px;
+  cursor: pointer;
+}
+
+/* the nth-child(n) selector doesn't seem to work in most browsers */
+tbody td.quarter_note_1,
+tbody td.quarter_note_2,
+tbody td.quarter_note_3,
+tbody td.quarter_note_4 {
+  background-image: url(/images/808_red.png);
+}
+tbody td.quarter_note_5,
+tbody td.quarter_note_6,
+tbody td.quarter_note_7,
+tbody td.quarter_note_8 {
+  background-image: url(/images/808_orange.png);
+}
+tbody td.quarter_note_9,
+tbody td.quarter_note_10,
+tbody td.quarter_note_11,
+tbody td.quarter_note_12 {
+  background-image: url(/images/808_yellow.png);
+}
+tbody td.quarter_note_13,
+tbody td.quarter_note_14,
+tbody td.quarter_note_15,
+tbody td.quarter_note_16 {
+  background-image: url(/images/808_white.png);
+}
+
+table tbody td div {
+  width: 30px;
+  height: 51px;
+  position: relative;
+}
+table tbody td div div.on {
+  background-image: url(/images/808_on.png);
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  left: 11px;
+  top: 7px;
+}
+
+table th {
+  font-size: 1.1em;
+  padding: 0.5em;
+}
+table tbody th {
+  text-align: right;
+  padding-right: 1em;
+}

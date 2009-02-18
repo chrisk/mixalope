@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @drum_machine.name %>
+</p>
+
+
+<table>
+  <thead>
+    <tr id="blinkey">
+      <td></td>
+
+      <% 1.upto(16) do |i| %>
+        <th><%= i %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @drum_machine.sample_usages.each do |sample_usage| %>
+      <tr id="<%= dom_id(sample_usage) %>">
+        <th>
+          <%= sample_usage.sample.name %>
+        </th>
+
+        <% sample_usage.pattern.split(//).each_with_index do |bit, i| %>
+          <td class="quarter_note_<%= i+1 %>"><div><div class="<%= bit == "1" ? "on" : "off" %>"></div></div></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_drum_machine_path(@drum_machine) %> |
+<%= link_to 'Back', drum_machines_path %>

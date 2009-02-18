@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090207141236) do
+ActiveRecord::Schema.define(:version => 20090218095945) do
+
+  create_table "drum_machines", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sample_usages", :force => true do |t|
+    t.string   "pattern"
+    t.integer  "drum_machine_id"
+    t.integer  "sample_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "samples", :force => true do |t|
     t.string   "name"

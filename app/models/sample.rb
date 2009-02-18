@@ -1,5 +1,9 @@
 class Sample < ActiveRecord::Base
 
+  has_many :sample_usages
+  has_many :drum_machines, :through => :sample_usages
+
+
   has_attached_file :sound, :url =>  "/uploads/:class/:id_partition/:style.:extension",
                             :path => ":rails_root/public/uploads/:class/:id_partition/:style.:extension"
 
