@@ -22,12 +22,31 @@
         </th>
 
         <% sample_usage.pattern.split(//).each_with_index do |bit, i| %>
-          <td class="quarter_note_<%= i+1 %>"><div><div class="<%= bit == "1" ? "on" : "off" %>"></div></div></td>
+          <td class="quarter_note_<%= i+1 %>" onclick="<%= dom_id(sample_usage) %>.play();"><div><div class="<%= bit == "1" ? "on" : "off" %>"></div></div></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<script type="text/javascript">
+  // TODO: I'm going to hell for this code. Extract out
+
+  <% @drum_machine.sample_usages.each do |sample_usage| %>
+    var <%= dom_id(sample_usage) %> = null;
+  <% end %>
+
+  soundManager.onload = function() {
+    <% @drum_machine.sample_usages.each do |sample_usage| %>
+      <%= dom_id(sample_usage) %> = soundManager.createSound({
+        id: '<%= dom_id(sample_usage) %>',
+        url: '<%= sample_usage.sample.sound.url %>'
+      });
+
+      <%= dom_id(sample_usage) %>.load();
+    <% end %>
+  }
+</script>
 
 <%= link_to 'Edit', edit_drum_machine_path(@drum_machine) %> |
 <%= link_to 'Back', drum_machines_path %>
